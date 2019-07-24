@@ -109,7 +109,7 @@ simpletxtDate<-read.csv("D://Annie//Documents//GitHub//GitHubForRClass//Extradit
 
 #title 
 
-simpletitleDate$t <- factor(simpletitleDate$t, levels = c("香港","","反送中","逃犯條例","共產黨","元朗"), ordered = TRUE )
+simpletitleDate$t <- factor(simpletitleDate$t, levels = c("香港","反送中","逃犯條例","共產黨","元朗"), ordered = TRUE )
 simpletitleDate$date <- as.Date(simpletitleDate$date,format="%Y-%m-%d")
 
 Graph_title_S<-ggplot(data=simpletitleDate,aes(x=date,y=qua,group=t))+
