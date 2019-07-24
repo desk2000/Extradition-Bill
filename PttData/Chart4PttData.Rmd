@@ -66,7 +66,7 @@ Graph_title<-ggplot(data=titleDate,aes(x=date,y=qua,group=t))+
   geom_line(aes(color=t))+
   geom_point(aes(color=t))
 
-Graph_plus_title<-Graph_title+scale_color_manual(values=c("#28004d","#ae0000", "#006030","#9f5000","#613030","#ffa042","#5b5b5b","#eac100"))+ scale_x_date(date_minor_breaks = "3 day")+scale_y_continuous(trans = 'sqrt') 
+Graph_plus_title<-Graph_title+scale_color_manual(values=c("#28004d","#ea0000", "#00db00","#ff8000","#613030","#ffa042","#5b5b5b","#eac100"))+ scale_x_date(date_minor_breaks = "3 day")+scale_y_continuous(trans = 'sqrt') 
 print(Graph_plus_title)
 ```
 
@@ -104,14 +104,14 @@ simpletxtDate<-read.csv("D://Annie//Documents//GitHub//GitHubForRClass//Extradit
 ```{r titleSimpleLineChart}
 #title 
 
-simpletitleDate$t <- factor(simpletitleDate$t, levels = c("香港","","反送中","逃犯條例","共產黨","元朗"), ordered = TRUE )
+simpletitleDate$t <- factor(simpletitleDate$t, levels = c("香港","反送中","逃犯條例","共產黨","元朗"), ordered = TRUE )
 simpletitleDate$date <- as.Date(simpletitleDate$date,format="%Y-%m-%d")
 
 Graph_title_S<-ggplot(data=simpletitleDate,aes(x=date,y=qua,group=t))+
   geom_line(aes(color=t))+
   geom_point(aes(color=t))
 
-Graph_plus_title_S<-Graph_title_S+scale_color_manual(values=c("#28004d","#ae0000", "#006030","#9f5000","#613030"))+ scale_x_date(date_minor_breaks = "3 day")+scale_y_continuous(trans = 'sqrt') 
+Graph_plus_title_S<-Graph_title_S+scale_color_manual(values=c("#28004d","#ea0000", "#00db00","#ff8000","#613030"))+ scale_x_date(date_minor_breaks = "3 day")+scale_y_continuous(trans = 'sqrt') 
 print(Graph_plus_title_S)
 ```
 
@@ -122,7 +122,7 @@ print(Graph_plus_title_S)
 #txt
 
 
-simpletxtDate$t <- factor(simpletxtDate$t, levels = c("香港","","反送中","逃犯條例","共產黨","元朗"), ordered = TRUE )
+simpletxtDate$t <- factor(simpletxtDate$t, levels = c("香港","反送中","逃犯條例","共產黨","元朗"), ordered = TRUE )
 simpletxtDate$date <- as.Date(simpletxtDate$date,format="%Y-%m-%d")
 
 
@@ -130,6 +130,6 @@ Graph_txt_S<-ggplot(data=simpletxtDate,aes(x=date,y=qua,group=t))+
   geom_line(aes(color=t))+
   geom_point(aes(color=t))
 
-Graph_plus_txt_S<-Graph_txt_S+scale_color_manual(values=c("#28004d","#ae0000", "#006030","#9f5000","#613030"))+ scale_x_date(date_minor_breaks="3 day ")+scale_y_continuous(trans = 'sqrt') 
+Graph_plus_txt_S<-Graph_txt_S+scale_color_manual(values=c("#28004d","#ea0000", "#00db00","#ff8000","#613030"))+ scale_x_date(date_minor_breaks="3 day ")+scale_y_continuous(trans = 'sqrt') 
 print(Graph_plus_txt_S)
 ```
