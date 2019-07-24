@@ -107,5 +107,5 @@ for(id in 2 : 47)
 TDM.texts[is.na(TDM.texts)] <- 0
 
 setwd("D:/GitHub Files/Extradition-Bill/PttData/output")
-write.csv(TDM.titles, 'TDM_titles', row.names = TRUE)
-write.csv(TDM.titles, 'TDM_texts', row.names = TRUE)
+write.csv(TDM.titles, 'TDM_titles.csv', row.names = TRUE)
+write.csv(TDM.texts, 'TDM_texts.csv', row.names = TRUE)
