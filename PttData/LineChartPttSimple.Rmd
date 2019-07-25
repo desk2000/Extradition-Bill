@@ -1,0 +1,27 @@
+---
+title: "PTT Simple"
+author: "Annie Chen"
+date: "2019/7/25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r ptt}
+#讀檔
+titleDataT<-read.csv("D://Annie//Documents//GitHub//GitHubForRClass//Extradition-Bill//PttData//output//txtDataFinalT2.csv",sep = ",", as.is = TRUE)
+
+titleDataT$t <- factor(titleDataT$t, levels = c("香港","阿翔","韓國瑜","發大財"), ordered = TRUE )
+titleDataT$date <- as.Date(titleDataT$date,format="%Y-%m-%d")
+
+library(ggplot2)
+
+Graph_txt_T<-ggplot(data=titleDataT,aes(x=date,y=qua,group=t))+
+  geom_line(aes(color=t))+
+  geom_point(aes(color=t))
+
+Graph_plus_txt_T<-Graph_txt_T+scale_color_manual(values=c("#28004d","#ea0000", "#00db00","#ff8000"))+ scale_x_date(date_minor_breaks="3 day ")+scale_y_continuous(trans = 'sqrt') 
+print(Graph_plus_txt_T)
+```
